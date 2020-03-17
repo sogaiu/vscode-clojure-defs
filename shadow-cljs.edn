@@ -1,0 +1,17 @@
+{:source-paths ["src"]
+ ;;
+ :dependencies [
+                [funcool/promesa "5.0.0"]
+               ]
+ ;;
+ :builds
+ {:dev
+  {:target :node-library
+   :compiler-options {:infer-externs :auto}
+   :exports {
+             :activate vsc.clojure-defs.core/activate
+             :deactivate vsc.clojure-defs.core/deactivate
+            }
+   :output-dir "lib/js"
+   :output-to "lib/main.js"
+   :devtools {:before-load-async vsc.clojure-defs.core/before}}}}
